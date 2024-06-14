@@ -1,6 +1,7 @@
-import { Container, VStack, Heading, Text, Box, Input, Button, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
+import { Container, VStack, Heading, Text, Box, Input, Button, FormControl, FormLabel, Textarea, Link } from "@chakra-ui/react";
 import { useEffect } from 'react';
 import axios from 'axios';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Index = () => {
   useEffect(() => {
@@ -49,6 +50,7 @@ const Index = () => {
       <Box as="footer" textAlign="center" color="gray.600">
         <Text>Contact us at support@pdfsender.com</Text>
         <Text>&copy; 2023 PDF Sender Service</Text>
+        <Link as={RouterLink} to="/view-log" color="blue.500" mt={4}>View Logs</Link>
       </Box>
     </Container>
   );
