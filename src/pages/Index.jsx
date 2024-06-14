@@ -1,6 +1,23 @@
 import { Container, VStack, Heading, Text, Box, Input, Button, FormControl, FormLabel, Textarea } from "@chakra-ui/react";
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const Index = () => {
+  useEffect(() => {
+    const logPdfView = async () => {
+      try {
+        await axios.post('http://localhost:5000/api/log', {
+          pdfId: 'sample-pdf-id',
+          userId: 'sample-user-id',
+        });
+      } catch (error) {
+        console.error('Failed to log PDF view', error);
+      }
+    };
+
+    logPdfView();
+  }, []);
+
   return (
     <Container maxW="container.md" py={10}>
       {/* Header */}
